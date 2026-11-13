@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-apk:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: 1. Checkout Repository
@@ -19,15 +19,24 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: 3. Setup Android SDK
-        uses: android-actions/setup-android@v3
+      - name: 3. Verify Android SDK & Install Gradle 8.4
+        run: |
+          # التأكد من مسار Android SDK المثبت مسبقاً في السيرفر أو تحميله عند الحاجة
+          if [ -z "$ANDROID_HOME" ] || [ ! -d "$ANDROID_HOME" ]; then
+            export ANDROID_HOME="$HOME/android-sdk"
+            mkdir -p "$ANDROID_HOME/cmdline-tools"
+            curl -sL https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -o cmdtools.zip
+            unzip -q cmdtools.zip -d "$ANDROID_HOME/cmdline-tools"
+            mv "$ANDROID_HOME/cmdline-tools/cmdline-tools" "$ANDROID_HOME/cmdline-tools/latest"
+            echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
+          fi
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
 
-      - name: 4. Setup Compatible Gradle 8.4
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '8.4'
+          # تحميل Gradle 8.4 مباشرة لتفادي مشاكل توافق الإضافات
+          curl -sL https://services.gradle.org/distributions/gradle-8.4-bin.zip -o gradle.zip
+          unzip -q gradle.zip -d "$HOME"
 
-      - name: 5. Generate Android Project & Download Offline Audio
+      - name: 4. Generate Android Project & Download Offline Audio
         run: |
           mkdir -p android-app/app/src/main/java/com/quran/nazi3at
           mkdir -p android-app/app/src/main/assets/audio
@@ -42,12 +51,12 @@ jobs:
               -o "android-app/app/src/main/assets/audio/079${i}.mp3"
           done
 
-          cat << 'EOF' > android-app/settings.gradle
+          cat << 'EOF' | sed 's/^          //' > android-app/settings.gradle
           rootProject.name = "SurahAnNaziat"
           include ':app'
           EOF
 
-          cat << 'EOF' > android-app/build.gradle
+          cat << 'EOF' | sed 's/^          //' > android-app/build.gradle
           buildscript {
               repositories {
                   google()
@@ -65,7 +74,7 @@ jobs:
           }
           EOF
 
-          cat << 'EOF' > android-app/app/build.gradle
+          cat << 'EOF' | sed 's/^          //' > android-app/app/build.gradle
           apply plugin: 'com.android.application'
 
           android {
@@ -93,8 +102,7 @@ jobs:
           }
           EOF
 
-          cat << 'EOF' > android-app/app/src/main/AndroidManifest.xml
-          <?xml version="1.0" encoding="utf-8"?>
+          cat << 'EOF' | sed 's/^          //' > android-app/app/src/main/AndroidManifest.xml
           <manifest xmlns:android="http://schemas.android.com/apk/res/android">
               <uses-permission android:name="android.permission.INTERNET" />
 
@@ -118,7 +126,7 @@ jobs:
           </manifest>
           EOF
 
-          cat << 'EOF' > android-app/app/src/main/java/com/quran/nazi3at/MainActivity.java
+          cat << 'EOF' | sed 's/^          //' > android-app/app/src/main/java/com/quran/nazi3at/MainActivity.java
           package com.quran.nazi3at;
 
           import android.app.Activity;
@@ -157,13 +165,13 @@ jobs:
           }
           EOF
 
-      - name: 6. Build APK
+      - name: 5. Build APK
         working-directory: ./android-app
         run: |
-          gradle assembleDebug
+          "$HOME/gradle-8.4/bin/gradle" assembleDebug --no-daemon
           cp app/build/outputs/apk/debug/app-debug.apk ../Surah-An-Naziat.apk
 
-      - name: 7. Upload Ready APK
+      - name: 6. Upload Ready APK
         uses: actions/upload-artifact@v4
         with:
           name: Surah-An-Naziat-APK
