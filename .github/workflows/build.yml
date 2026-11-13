@@ -1,4 +1,4 @@
-name: Build Surah An-Naziat APK
+name: Build APK Fast
 
 on:
   push:
@@ -10,67 +10,45 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 1. Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: 2. Set up JDK 17
+      - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: 3. Setup Android SDK
+      - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: 4. Generate Android Project Structure & Download Offline Audio
+      - name: Generate Android Project
         run: |
           mkdir -p android-app/app/src/main/java/com/quran/nazi3at
-          mkdir -p android-app/app/src/main/assets/audio
-          mkdir -p android-app/app/src/main/res/values
+          mkdir -p android-app/app/src/main/assets
 
-          # نسخ ملف HTML إلى داخل التطبيق
           cp index.html android-app/app/src/main/assets/index.html
 
-          # تحميل الـ 46 آية صوتية (الحصري المعلم) ودمجها داخل الـ APK لتشتغل بدون إنترنت
-          echo "Downloading 46 audio files for offline playback..."
-          for i in $(seq -f "%03g" 1 46); do
-            curl -s -L "https://everyayah.com/data/Husary_Muallim_128kbps/079${i}.mp3" \
-              -o "android-app/app/src/main/assets/audio/079${i}.mp3"
-          done
-
-          # إنشاء settings.gradle
           cat << 'EOF' > android-app/settings.gradle
           rootProject.name = "SurahAnNaziat"
           include ':app'
           EOF
 
-          # إنشاء build.gradle الرئيسي
           cat << 'EOF' > android-app/build.gradle
           buildscript {
-              repositories {
-                  google()
-                  mavenCentral()
-              }
-              dependencies {
-                  classpath 'com.android.tools.build:gradle:8.1.2'
-              }
+              repositories { google(); mavenCentral() }
+              dependencies { classpath 'com.android.tools.build:gradle:8.1.2' }
           }
           allprojects {
-              repositories {
-                  google()
-                  mavenCentral()
-              }
+              repositories { google(); mavenCentral() }
           }
           EOF
 
-          # إنشاء app/build.gradle خفيف ومتوافق مع جميع الهواتف
           cat << 'EOF' > android-app/app/build.gradle
           apply plugin: 'com.android.application'
-
           android {
               namespace 'com.quran.nazi3at'
               compileSdk 34
-
               defaultConfig {
                   applicationId "com.quran.nazi3at"
                   minSdk 21
@@ -78,38 +56,24 @@ jobs:
                   versionCode 1
                   versionName "1.0"
               }
-
               buildTypes {
-                  release {
-                      minifyEnabled true
-                      shrinkResources true
-                  }
-              }
-
-              compileOptions {
-                  sourceCompatibility JavaVersion.VERSION_17
-                  targetCompatibility JavaVersion.VERSION_17
+                  release { minifyEnabled false }
               }
           }
           EOF
 
-          # إنشاء AndroidManifest.xml
           cat << 'EOF' > android-app/app/src/main/AndroidManifest.xml
           <?xml version="1.0" encoding="utf-8"?>
           <manifest xmlns:android="http://schemas.android.com/apk/res/android">
               <uses-permission android:name="android.permission.INTERNET" />
-
               <application
                   android:label="سورة النازعات"
                   android:icon="@android:drawable/ic_media_play"
                   android:usesCleartextTraffic="true"
-                  android:hardwareAccelerated="true"
                   android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
-
                   <activity
                       android:name=".MainActivity"
-                      android:exported="true"
-                      android:configChanges="orientation|screenSize|keyboardHidden">
+                      android:exported="true">
                       <intent-filter>
                           <action android:name="android.intent.action.MAIN" />
                           <category android:name="android.intent.category.LAUNCHER" />
@@ -119,10 +83,8 @@ jobs:
           </manifest>
           EOF
 
-          # إنشاء MainActivity.java مع تفعيل الصوت التلقائي بين الآيات وحفظ الإعدادات
           cat << 'EOF' > android-app/app/src/main/java/com/quran/nazi3at/MainActivity.java
           package com.quran.nazi3at;
-
           import android.app.Activity;
           import android.os.Bundle;
           import android.webkit.WebSettings;
@@ -130,43 +92,28 @@ jobs:
           import android.webkit.WebViewClient;
 
           public class MainActivity extends Activity {
-              private WebView webView;
-
               @Override
               protected void onCreate(Bundle savedInstanceState) {
                   super.onCreate(savedInstanceState);
-                  webView = new WebView(this);
+                  WebView webView = new WebView(this);
                   setContentView(webView);
-
                   WebSettings settings = webView.getSettings();
                   settings.setJavaScriptEnabled(true);
                   settings.setDomStorageEnabled(true);
-                  settings.setAllowFileAccess(true);
-                  // ضروري جداً لكي ينتقل الصوت من آية لآية تلقائياً بدون توقف
                   settings.setMediaPlaybackRequiresUserGesture(false);
-
                   webView.setWebViewClient(new WebViewClient());
                   webView.loadUrl("file:///android_asset/index.html");
-              }
-
-              @Override
-              public void onBackPressed() {
-                  if (webView.canGoBack()) {
-                      webView.goBack();
-                  } else {
-                      super.onBackPressed();
-                  }
               }
           }
           EOF
 
-      - name: 5. Build Signed APK
+      - name: Build APK
         working-directory: ./android-app
         run: |
           gradle assembleDebug
           cp app/build/outputs/apk/debug/app-debug.apk ../Surah-An-Naziat.apk
 
-      - name: 6. Upload Ready APK to Artifacts
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Surah-An-Naziat-APK
