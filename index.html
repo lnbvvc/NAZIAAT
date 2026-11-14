@@ -6,17 +6,17 @@
   <title>سورة النازعات</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lateef:wght@500;700&family=Noto+Naskh+Arabic:wght@500;700&family=Readex+Pro:wght@400;500;600;700&family=Scheherazade+New:wght@500;700&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@500;700&family=Readex+Pro:wght@400;500;600;700&family=Scheherazade+New:wght@500;700&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-body: #f5f0e6;
       --bg-card: #fffdf9;
       --bg-subtle: #ebe4d5;
-      --bg-dock: rgba(255, 253, 249, 0.95);
+      --bg-dock: rgba(255, 253, 249, 0.96);
       --text-main: #1c2521;
       --text-muted: #68645b;
       --primary: #0d6849;
-      --primary-soft: rgba(13, 104, 73, 0.12);
+      --primary-soft: rgba(13, 104, 73, 0.13);
       --accent: #b88b3a;
       --border: #e0d6c2;
       --shadow: 0 10px 28px rgba(28, 37, 33, 0.08);
@@ -28,11 +28,11 @@
       --bg-body: #f1f5f9;
       --bg-card: #ffffff;
       --bg-subtle: #e2e8f0;
-      --bg-dock: rgba(255, 255, 255, 0.95);
+      --bg-dock: rgba(255, 255, 255, 0.96);
       --text-main: #0f172a;
       --text-muted: #64748b;
       --primary: #0284c7;
-      --primary-soft: rgba(2, 132, 199, 0.11);
+      --primary-soft: rgba(2, 132, 199, 0.12);
       --accent: #0ea5e9;
       --border: #cbd5e1;
       --shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
@@ -42,11 +42,11 @@
       --bg-body: #e8f3ec;
       --bg-card: #f7fcf9;
       --bg-subtle: #d5e8dc;
-      --bg-dock: rgba(247, 252, 249, 0.95);
+      --bg-dock: rgba(247, 252, 249, 0.96);
       --text-main: #12291b;
       --text-muted: #4b6b57;
       --primary: #15803d;
-      --primary-soft: rgba(21, 128, 61, 0.12);
+      --primary-soft: rgba(21, 128, 61, 0.13);
       --accent: #22c55e;
       --border: #c1decb;
       --shadow: 0 10px 28px rgba(18, 41, 27, 0.07);
@@ -56,11 +56,11 @@
       --bg-body: #0b100f;
       --bg-card: #151d1b;
       --bg-subtle: #1f2b28;
-      --bg-dock: rgba(21, 29, 27, 0.96);
+      --bg-dock: rgba(21, 29, 27, 0.97);
       --text-main: #eef5f3;
       --text-muted: #8da39d;
       --primary: #34d399;
-      --primary-soft: rgba(52, 211, 153, 0.14);
+      --primary-soft: rgba(52, 211, 153, 0.15);
       --accent: #fbbf24;
       --border: #263531;
       --shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
@@ -78,7 +78,7 @@
       background-color: var(--bg-body);
       color: var(--text-main);
       font-family: 'Readex Pro', sans-serif;
-      padding-bottom: 175px;
+      padding-bottom: 190px;
       transition: background-color 0.3s ease, color 0.3s ease;
       overflow-x: hidden;
     }
@@ -88,25 +88,21 @@
       touch-action: none;
     }
 
-    /* الترويسة العلوية */
+    /* الترويسة العلوية مع شريط إنجاز الحفظ */
     .hero-wrapper {
       max-width: 800px;
-      margin: 14px auto 12px;
+      margin: 12px auto 10px;
       padding: 0 14px;
-      animation: fadeDown 0.45s ease;
     }
 
     .surah-hero {
       background: linear-gradient(135deg, #0d6849 0%, #073b29 100%);
       border-radius: 24px;
-      padding: 20px 22px;
+      padding: 18px 20px;
       color: #ffffff;
       position: relative;
       overflow: hidden;
       box-shadow: 0 12px 28px rgba(7, 59, 41, 0.22);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
     }
 
     [data-theme="fajr"] .surah-hero {
@@ -118,38 +114,41 @@
       border: 1px solid #2b3d38;
     }
 
-    .hero-right h1 {
-      font-family: 'Amiri', serif;
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 8px;
+    .hero-top-row {
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .hero-right h1 {
+      font-family: 'Amiri', serif;
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .hero-badges {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
     }
 
     .hero-badge {
       background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(6px);
-      padding: 4px 11px;
+      padding: 3px 10px;
       border-radius: 99px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
     }
 
     .surah-order {
-      width: 50px;
-      height: 50px;
-      border-radius: 16px;
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
       background: rgba(255, 255, 255, 0.13);
       border: 1.5px solid rgba(255, 255, 255, 0.25);
       display: flex;
@@ -157,13 +156,133 @@
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 17px;
       color: #fde68a;
     }
 
     .surah-order small {
       font-size: 9px;
       color: rgba(255,255,255,0.75);
+      font-weight: 500;
+    }
+
+    /* شريط تقدم حفظ السورة */
+    .hifz-progress-wrap {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 8px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hifz-progress-text {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 600;
+    }
+
+    .hifz-progress-bar {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .hifz-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: #fde68a;
+      border-radius: 99px;
+      transition: width 0.35s ease;
+    }
+
+    /* شريط الأدوات الذكي (اختبار الحفظ + المعاني) */
+    .smart-tools {
+      max-width: 800px;
+      margin: 0 auto 10px;
+      padding: 0 14px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .tool-chip {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      color: var(--text-main);
+      padding: 9px 12px;
+      border-radius: 15px;
+      font-family: 'Readex Pro', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: all 0.2s ease;
+    }
+
+    .tool-chip svg {
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .tool-chip.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .tool-chip.active svg {
+      color: #ffffff;
+    }
+
+    [data-theme="midad"] .tool-chip.active,
+    [data-theme="midad"] .tool-chip.active svg {
+      color: #0b100f;
+    }
+
+    /* بطاقة المعنى والتفسير المبسط للأطفال */
+    .meaning-banner {
+      max-width: 800px;
+      margin: 0 auto 12px;
+      padding: 0 14px;
+      display: none;
+    }
+
+    .meaning-banner.show {
+      display: block;
+      animation: fadeDown 0.25s ease;
+    }
+
+    .meaning-box {
+      background: var(--bg-card);
+      border: 1.5px solid var(--accent);
+      border-right: 5px solid var(--accent);
+      border-radius: 18px;
+      padding: 12px 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .meaning-header {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .meaning-body {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-main);
       font-weight: 500;
     }
 
@@ -179,16 +298,16 @@
       font-family: var(--quran-font);
       font-size: calc(var(--ayah-size) + 2px);
       color: var(--primary);
-      padding: 14px 12px;
+      padding: 12px;
       margin-bottom: 12px;
       background: var(--bg-card);
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: 20px;
       box-shadow: var(--shadow);
       font-weight: 700;
     }
 
-    /* قائمة الآيات والأنميشن */
+    /* 1. وضع الآيات المنفصلة (بدون أي فراغات) */
     .quran-list {
       display: flex;
       flex-direction: column;
@@ -199,56 +318,66 @@
       background: var(--bg-card);
       border: 1.5px solid var(--border);
       border-radius: 20px;
-      padding: 16px 20px;
+      padding: 16px 18px;
       font-family: var(--quran-font);
       font-size: var(--ayah-size);
       line-height: 2.15;
+      text-align: right;
+      word-spacing: normal;
+      letter-spacing: 0;
       cursor: pointer;
       position: relative;
-      overflow: hidden;
-      transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-      animation: fadeUp 0.35s ease backwards;
-    }
-
-    .ayah-card:active {
-      transform: scale(0.985);
+      transition: background-color 0.2s ease, border-color 0.2s ease;
     }
 
     .ayah-card.outside-range {
-      opacity: 0.4;
+      opacity: 0.38;
     }
 
     .ayah-card.active {
       background: var(--primary-soft);
       border-color: var(--primary);
-      box-shadow: 0 8px 24px rgba(13, 104, 73, 0.14);
-      transform: translateY(-2px);
+    }
+
+    /* إخفاء الكلمات لاختبار الحفظ */
+    .quran-list.hide-words .ayah-text {
+      filter: blur(8px);
+      opacity: 0.35;
+      transition: filter 0.25s ease, opacity 0.25s ease;
+    }
+
+    .quran-list.hide-words .ayah-card.active .ayah-text,
+    .quran-list.hide-words .ayah-card.revealed .ayah-text {
+      filter: blur(0);
+      opacity: 1;
     }
 
     .ayah-progress {
       position: absolute;
       bottom: 0;
       right: 0;
-      height: 4px;
+      height: 3.5px;
       width: 0%;
       background: var(--primary);
       transition: width 0.12s linear;
       opacity: 0;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px;
     }
 
     .ayah-card.active .ayah-progress {
       opacity: 1;
     }
 
-    /* شارة رقم الآية بالأرقام اللاتينية 1, 2, 3 */
+    /* شارة رقم الآية (بحجم ثابت 100% لا يسبب أي إزاحة للنص عند التشغيل) */
     .ayah-marker {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 1.9em;
-      height: 1.9em;
-      padding: 0 6px;
-      margin: 0 8px;
+      min-width: 1.85em;
+      height: 1.85em;
+      padding: 0 5px;
+      margin: 0 6px;
       font-family: 'Readex Pro', sans-serif;
       font-size: 0.52em;
       font-weight: 700;
@@ -257,63 +386,58 @@
       border: 1.5px solid var(--accent);
       border-radius: 99px;
       vertical-align: middle;
-      transition: transform 0.25s ease, background 0.25s ease;
+      position: relative;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .ayah-card.memorized .ayah-marker {
+      border-color: var(--primary);
+      background: var(--primary-soft);
     }
 
     .ayah-card.active .ayah-marker {
       background: var(--primary);
       color: #ffffff;
       border-color: var(--primary);
-      transform: scale(1.1);
+    }
+
+    /* نبض ضوئي حول رقم الآية أثناء القراءة بدلاً من إدخال عنصر يغير عرض السطر */
+    .ayah-card.active.playing .ayah-marker {
+      animation: markerPulse 1.3s infinite ease-in-out;
     }
 
     [data-theme="midad"] .ayah-card.active .ayah-marker {
       color: #0b100f;
     }
 
-    /* موجات صوتية متحركة داخل الآية النشطة */
-    .sound-wave {
-      display: none;
-      align-items: flex-end;
-      gap: 2.5px;
-      height: 14px;
-      margin-right: 6px;
-      vertical-align: middle;
-    }
-
-    .ayah-card.active.playing .sound-wave {
-      display: inline-flex;
-    }
-
-    .sound-wave span {
-      width: 3px;
-      background: var(--primary);
-      border-radius: 3px;
-      animation: waveBounce 0.8s infinite ease-in-out;
-    }
-
-    .sound-wave span:nth-child(2) { animation-delay: 0.2s; }
-    .sound-wave span:nth-child(3) { animation-delay: 0.4s; }
-
-    /* وضع المصحف المتصل */
+    /* 2. وضع المصحف المتصل (تم إصلاح الفراغات 100% بإلغاء justify وإضافة إطار المصحف) */
     .quran-list.mushaf-mode {
       display: block;
       background: var(--bg-card);
-      border: 2px solid var(--border);
+      border: 3px double var(--accent);
       border-radius: 24px;
       padding: 22px 18px;
-      text-align: justify;
-      line-height: 2.5;
+      /* محاذاة طبيعية بدون تمطيط المسافات بين الكلمات */
+      text-align: right;
+      word-spacing: 2px;
+      line-height: 2.45;
       box-shadow: var(--shadow);
+    }
+
+    .quran-list.mushaf-mode.center-mushaf {
+      text-align: center;
     }
 
     .quran-list.mushaf-mode .ayah-card {
       display: inline;
       background: transparent;
       border: none;
-      padding: 4px 6px;
-      border-radius: 12px;
+      padding: 3px 4px;
+      border-radius: 10px;
       box-shadow: none;
+      /* تجنب تقطيع التلوين عند التفاف السطر */
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
     }
 
     .quran-list.mushaf-mode .ayah-card.active {
@@ -338,7 +462,7 @@
       border: 1.5px solid var(--border);
       border-radius: 26px;
       padding: 10px 14px 12px;
-      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
       z-index: 35;
       display: flex;
       flex-direction: column;
@@ -367,11 +491,6 @@
       justify-content: space-between;
       gap: 6px;
       cursor: pointer;
-      transition: transform 0.15s ease, background 0.2s;
-    }
-
-    .quick-pill:active {
-      transform: scale(0.95);
     }
 
     .pill-label {
@@ -387,7 +506,6 @@
       color: var(--primary);
       display: flex;
       align-items: center;
-      flex-shrink: 0;
     }
 
     .style-btn {
@@ -422,6 +540,28 @@
       gap: 6px;
     }
 
+    /* الموجات الصوتية في المشغل السفلي حيث لا تؤثر على النص القرآني */
+    .dock-wave {
+      display: none;
+      align-items: flex-end;
+      gap: 2px;
+      height: 13px;
+    }
+
+    .dock-wave.active {
+      display: inline-flex;
+    }
+
+    .dock-wave span {
+      width: 2.5px;
+      background: var(--primary);
+      border-radius: 2px;
+      animation: waveBounce 0.75s infinite ease-in-out;
+    }
+
+    .dock-wave span:nth-child(2) { animation-delay: 0.2s; }
+    .dock-wave span:nth-child(3) { animation-delay: 0.4s; }
+
     .now-playing-sub {
       font-size: 11px;
       color: var(--text-muted);
@@ -434,13 +574,13 @@
     .player-buttons {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
     }
 
     .icon-action {
-      width: 40px;
-      height: 40px;
-      border-radius: 13px;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
       border: none;
       background: transparent;
       color: var(--text-main);
@@ -448,18 +588,17 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: transform 0.12s, background 0.15s;
     }
 
-    .icon-action:active {
-      background: var(--bg-subtle);
-      transform: scale(0.9);
+    .icon-action.memorized-btn.active {
+      color: var(--primary);
+      background: var(--primary-soft);
     }
 
     .play-fab {
-      width: 50px;
-      height: 50px;
-      border-radius: 17px;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
       border: none;
       background: var(--primary);
       color: #ffffff;
@@ -468,15 +607,10 @@
       justify-content: center;
       cursor: pointer;
       box-shadow: 0 6px 18px rgba(13, 104, 73, 0.32);
-      transition: transform 0.15s;
     }
 
     [data-theme="midad"] .play-fab {
       color: #0b100f;
-    }
-
-    .play-fab:active {
-      transform: scale(0.9);
     }
 
     .spinner {
@@ -488,7 +622,7 @@
       animation: spin 0.7s linear infinite;
     }
 
-    /* النوافذ المنبثقة السفلية القابلة للسحب */
+    /* النوافذ السفلية */
     .backdrop {
       position: fixed;
       inset: 0;
@@ -529,14 +663,12 @@
       transform: translateY(0);
     }
 
-    /* منطقة السحب العلوية للنافذة */
     .sheet-drag-zone {
       position: sticky;
       top: 0;
       background: var(--bg-card);
-      padding: 12px 0 12px;
+      padding: 12px 0;
       z-index: 5;
-      cursor: grab;
       touch-action: none;
       border-bottom: 1px solid var(--border);
       margin-bottom: 16px;
@@ -562,11 +694,6 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      color: var(--text-main);
-    }
-
-    .sheet-top h2 svg {
-      color: var(--primary);
     }
 
     .close-circle {
@@ -577,36 +704,28 @@
       background: var(--bg-subtle);
       color: var(--text-main);
       font-size: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       cursor: pointer;
     }
 
     .group-block {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .group-title {
       font-size: 12px;
       font-weight: 700;
       color: var(--text-muted);
-      margin-bottom: 10px;
+      margin-bottom: 9px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    .group-title svg {
-      color: var(--primary);
-    }
-
-    /* أزرار التبديل المقسمة */
     .segmented {
       display: flex;
       background: var(--bg-subtle);
       padding: 4px;
-      border-radius: 16px;
+      border-radius: 15px;
       gap: 4px;
     }
 
@@ -615,17 +734,16 @@
       border: none;
       background: transparent;
       color: var(--text-muted);
-      padding: 10px;
-      border-radius: 12px;
+      padding: 9px 6px;
+      border-radius: 11px;
       font-family: 'Readex Pro', sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 7px;
-      transition: all 0.2s;
+      gap: 5px;
     }
 
     .seg-item.active {
@@ -634,7 +752,6 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
-    /* بطاقات المظهر مع الأيقونات */
     .themes-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -653,11 +770,6 @@
       font-family: 'Readex Pro', sans-serif;
       font-size: 12px;
       font-weight: 600;
-      transition: transform 0.15s, border-color 0.2s;
-    }
-
-    .theme-swatch:active {
-      transform: scale(0.95);
     }
 
     .theme-swatch.active {
@@ -666,8 +778,8 @@
     }
 
     .swatch-circle {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       border: 1px solid rgba(0,0,0,0.12);
       display: flex;
@@ -675,31 +787,25 @@
       justify-content: center;
     }
 
-    /* أزرار التكرار */
     .pills-row {
       display: flex;
-      gap: 8px;
+      gap: 7px;
       flex-wrap: wrap;
     }
 
     .num-pill {
       flex: 1;
-      min-width: 48px;
-      padding: 10px 6px;
-      border-radius: 14px;
+      min-width: 44px;
+      padding: 9px 6px;
+      border-radius: 13px;
       border: 1.5px solid var(--border);
       background: var(--bg-subtle);
       color: var(--text-main);
       font-family: 'Readex Pro', sans-serif;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
       text-align: center;
       cursor: pointer;
-      transition: all 0.15s;
-    }
-
-    .num-pill:active {
-      transform: scale(0.94);
     }
 
     .num-pill.active {
@@ -712,19 +818,18 @@
       color: #0b100f;
     }
 
-    /* النطاق السريع */
     .range-presets {
       display: flex;
       gap: 8px;
       overflow-x: auto;
       padding-bottom: 6px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       scrollbar-width: none;
     }
 
     .preset-chip {
       flex: 0 0 auto;
-      padding: 8px 14px;
+      padding: 7px 13px;
       border-radius: 99px;
       border: 1.5px solid var(--border);
       background: var(--bg-subtle);
@@ -751,15 +856,15 @@
       background: var(--bg-subtle);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 10px 12px;
+      padding: 8px 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .step-btn {
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       border-radius: 10px;
       border: none;
       background: var(--bg-card);
@@ -767,10 +872,6 @@
       font-size: 18px;
       font-weight: 700;
       cursor: pointer;
-    }
-
-    .step-btn:active {
-      transform: scale(0.9);
     }
 
     .step-info {
@@ -784,33 +885,27 @@
     }
 
     .step-info strong {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--text-main);
     }
 
-    /* بطاقات القراء والخطوط المزودة بأيقونات */
     .cards-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 9px;
     }
 
     .option-card {
       background: var(--bg-subtle);
       border: 1.5px solid var(--border);
       border-radius: 16px;
-      padding: 12px;
+      padding: 11px;
       text-align: right;
       cursor: pointer;
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 9px;
       font-family: 'Readex Pro', sans-serif;
-      transition: transform 0.15s, border-color 0.2s, background 0.2s;
-    }
-
-    .option-card:active {
-      transform: scale(0.96);
     }
 
     .option-card.active {
@@ -819,8 +914,8 @@
     }
 
     .card-icon {
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       border-radius: 10px;
       background: var(--bg-card);
       color: var(--primary);
@@ -828,6 +923,7 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      font-weight: 700;
     }
 
     .option-card.active .card-icon {
@@ -842,18 +938,18 @@
     .card-text {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 2px;
       min-width: 0;
     }
 
     .card-title {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       color: var(--text-main);
     }
 
     .card-sub {
-      font-size: 11px;
+      font-size: 10.5px;
       color: var(--primary);
       font-weight: 600;
     }
@@ -863,7 +959,7 @@
       align-items: center;
       gap: 12px;
       background: var(--bg-subtle);
-      padding: 12px 16px;
+      padding: 10px 16px;
       border-radius: 16px;
     }
 
@@ -873,7 +969,7 @@
       height: 6px;
     }
 
-    /* نافذة تأكيد الخروج من التطبيق */
+    /* نافذة الخروج */
     .exit-modal {
       position: fixed;
       inset: 0;
@@ -902,25 +998,6 @@
       width: 100%;
       max-width: 340px;
       text-align: center;
-      transform: scale(0.9);
-      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-      box-shadow: 0 20px 45px rgba(0,0,0,0.3);
-    }
-
-    .exit-modal.show .exit-box {
-      transform: scale(1);
-    }
-
-    .exit-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background: var(--primary-soft);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 14px;
     }
 
     .exit-box h3 {
@@ -955,28 +1032,24 @@
       color: #ffffff;
     }
 
-    [data-theme="midad"] .btn-stay {
-      color: #0b100f;
-    }
-
     .btn-leave {
       background: var(--bg-subtle);
       color: var(--text-main);
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes markerPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(13, 104, 73, 0.45); }
+      50% { box-shadow: 0 0 0 6px rgba(13, 104, 73, 0); }
     }
 
     @keyframes waveBounce {
       0%, 100% { height: 4px; }
-      50% { height: 14px; }
+      50% { height: 13px; }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes spin {
@@ -986,24 +1059,59 @@
 </head>
 <body>
 
-  <!-- بطاقة عنوان السورة -->
+  <!-- بطاقة عنوان السورة مع شريط إنجاز الحفظ -->
   <div class="hero-wrapper">
     <div class="surah-hero">
-      <div class="hero-right">
-        <h1>
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fde68a" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          سُورَةُ النَّازِعَاتِ
-        </h1>
-        <div class="hero-badges">
-          <span class="hero-badge">مكية</span>
-          <span class="hero-badge">46 آية</span>
-          <span class="hero-badge">الجزء 30</span>
+      <div class="hero-top-row">
+        <div class="hero-right">
+          <h1>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fde68a" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            سُورَةُ النَّازِعَاتِ
+          </h1>
+          <div class="hero-badges">
+            <span class="hero-badge">مكية</span>
+            <span class="hero-badge">46 آية</span>
+            <span class="hero-badge">الجزء 30</span>
+          </div>
+        </div>
+        <div class="surah-order">
+          <small>ترتيبها</small>
+          <span>79</span>
         </div>
       </div>
-      <div class="surah-order">
-        <small>ترتيبها</small>
-        <span>79</span>
+
+      <div class="hifz-progress-wrap">
+        <div class="hifz-progress-text">
+          <span id="memorizedCountText">تقدم الحفظ: 0 من 46 آية</span>
+          <span id="memorizedPctText">0%</span>
+        </div>
+        <div class="hifz-progress-bar">
+          <div class="hifz-progress-fill" id="memorizedBar"></div>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <!-- شريط الأدوات الذكي: اختبار الحفظ + معاني الآيات -->
+  <div class="smart-tools">
+    <button class="tool-chip" id="hideWordsBtn" onclick="toggleHideWords()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span>اختبار الحفظ</span>
+    </button>
+    <button class="tool-chip" id="meaningToggleBtn" onclick="toggleMeaningBanner()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>
+      <span>شرح الآية للأطفال</span>
+    </button>
+  </div>
+
+  <!-- نافذة شرح الآية والمعاني المبسطة -->
+  <div class="meaning-banner" id="meaningBanner">
+    <div class="meaning-box">
+      <div class="meaning-header">
+        <span id="meaningTitle">المعنى المبسط للآية 1</span>
+        <span style="font-size:11px; color:var(--text-muted);">يتحدث تلقائياً مع القراءة</span>
+      </div>
+      <div class="meaning-body" id="meaningText"></div>
     </div>
   </div>
 
@@ -1034,7 +1142,7 @@
     <div class="dock-player">
       <div class="now-playing" onclick="openSheet('hifzSheet')">
         <div class="now-playing-title">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+          <span class="dock-wave" id="dockWave"><span></span><span></span><span></span></span>
           <span id="playerStatus">اضغط على أي آية للاستماع</span>
         </div>
         <div class="now-playing-sub">
@@ -1045,6 +1153,9 @@
       </div>
 
       <div class="player-buttons">
+        <button class="icon-action memorized-btn" id="markMemBtn" onclick="toggleCurrentAyahMemorized()" title="تحديد كمحفوظة">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
         <button class="icon-action" onclick="prevAyah()" aria-label="السابقة">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
         </button>
@@ -1055,7 +1166,7 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
         </button>
         <button class="icon-action" onclick="stopAudio()" aria-label="إيقاف">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
         </button>
       </div>
     </div>
@@ -1069,24 +1180,16 @@
     <div class="sheet-drag-zone">
       <div class="sheet-pill"></div>
       <div class="sheet-top">
-        <h2>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
-          ضبط الحفظ والقارئ
-        </h2>
+        <h2>ضبط الحفظ والقارئ</h2>
         <button class="close-circle" onclick="closeAllSheets()">✕</button>
       </div>
     </div>
 
     <div class="group-block">
-      <div class="group-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-        اختيار القارئ الواضح للأطفال
-      </div>
+      <div class="group-title">اختيار القارئ الواضح للأطفال</div>
       <div class="cards-grid" id="recitersGrid">
         <button class="option-card" data-reciter="Husary_Muallim_128kbps" onclick="selectReciter('Husary_Muallim_128kbps', 'الحصري • المصحف المعلم', true)">
-          <div class="card-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
-          </div>
+          <div class="card-icon">ح</div>
           <div class="card-text">
             <span class="card-title">محمود خليل الحصري</span>
             <span class="card-sub">المصحف المعلم • أوفلاين</span>
@@ -1094,9 +1197,7 @@
         </button>
 
         <button class="option-card" data-reciter="Alafasy_128kbps" onclick="selectReciter('Alafasy_128kbps', 'مشاري راشد العفاسي', false)">
-          <div class="card-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-          </div>
+          <div class="card-icon">ع</div>
           <div class="card-text">
             <span class="card-title">مشاري العفاسي</span>
             <span class="card-sub">تلاوة عذبة وواضحة</span>
@@ -1104,9 +1205,7 @@
         </button>
 
         <button class="option-card" data-reciter="Minshawy_Muallim_128kbps" onclick="selectReciter('Minshawy_Muallim_128kbps', 'المنشاوي • ترديد الأطفال', false)">
-          <div class="card-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
+          <div class="card-icon">ط</div>
           <div class="card-text">
             <span class="card-title">المنشاوي المعلم</span>
             <span class="card-sub">مع ترديد الأطفال</span>
@@ -1114,9 +1213,7 @@
         </button>
 
         <button class="option-card" data-reciter="Minshawy_Murattal_128kbps" onclick="selectReciter('Minshawy_Murattal_128kbps', 'المنشاوي • تلاوة مرتلة', false)">
-          <div class="card-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-          </div>
+          <div class="card-icon">م</div>
           <div class="card-text">
             <span class="card-title">المنشاوي المرتل</span>
             <span class="card-sub">قراءة هادئة متأنية</span>
@@ -1126,10 +1223,25 @@
     </div>
 
     <div class="group-block">
-      <div class="group-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
-        تحديد نطاق الآيات للحفظ
+      <div class="group-title">سكتة الترديد للأطفال بعد كل آية</div>
+      <div class="segmented" id="pauseDelaySeg">
+        <button class="seg-item" data-delay="0" onclick="setPauseDelay(0)">بدون سكتة</button>
+        <button class="seg-item" data-delay="2500" onclick="setPauseDelay(2500)">سكتة 2.5 ث</button>
+        <button class="seg-item" data-delay="-1" onclick="setPauseDelay(-1)">بقدر وقت الآية</button>
       </div>
+    </div>
+
+    <div class="group-block">
+      <div class="group-title">سرعة صوت القارئ</div>
+      <div class="segmented" id="speedSeg">
+        <button class="seg-item" data-speed="0.85" onclick="setPlaybackSpeed(0.85)">بطيء 0.85x</button>
+        <button class="seg-item" data-speed="1" onclick="setPlaybackSpeed(1)">عادي 1x</button>
+        <button class="seg-item" data-speed="1.15" onclick="setPlaybackSpeed(1.15)">سريع 1.15x</button>
+      </div>
+    </div>
+
+    <div class="group-block">
+      <div class="group-title">تحديد نطاق الآيات للحفظ</div>
       <div class="range-presets" id="presetsRow">
         <button class="preset-chip" data-range="1-46" onclick="setPresetRange(1, 46)">السورة كاملة 1 - 46</button>
         <button class="preset-chip" data-range="1-14" onclick="setPresetRange(1, 14)">المقطع الأول 1 - 14</button>
@@ -1157,10 +1269,7 @@
     </div>
 
     <div class="group-block">
-      <div class="group-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 2.1l4 4-4 4"/><path d="M3 12.2v-2a4 4 0 0 1 4-4h14"/><path d="M7 21.9l-4-4 4-4"/><path d="M21 11.8v2a4 4 0 0 1-4 4H3"/></svg>
-        عدد تكرار كل آية
-      </div>
+      <div class="group-title">عدد تكرار كل آية</div>
       <div class="pills-row" id="ayahRepeatRow">
         <button class="num-pill" data-arep="1" onclick="setAyahRepeat(1)">1</button>
         <button class="num-pill" data-arep="2" onclick="setAyahRepeat(2)">2</button>
@@ -1172,10 +1281,7 @@
     </div>
 
     <div class="group-block" style="margin-bottom: 4px;">
-      <div class="group-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-        عدد تكرار المقطع كاملاً
-      </div>
+      <div class="group-title">عدد تكرار المقطع كاملاً</div>
       <div class="pills-row" id="rangeRepeatRow">
         <button class="num-pill" data-rrep="1" onclick="setRangeRepeat(1)">1</button>
         <button class="num-pill" data-rrep="2" onclick="setRangeRepeat(2)">2</button>
@@ -1191,74 +1297,49 @@
     <div class="sheet-drag-zone">
       <div class="sheet-pill"></div>
       <div class="sheet-top">
-        <h2>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
-          المظهر والخطوط
-        </h2>
+        <h2>المظهر والخطوط</h2>
         <button class="close-circle" onclick="closeAllSheets()">✕</button>
       </div>
     </div>
 
     <div class="group-block">
-      <div class="group-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
-        طريقة عرض الآيات
-      </div>
+      <div class="group-title">طريقة عرض الآيات (بدون فراغات)</div>
       <div class="segmented" id="viewModeSeg">
-        <button class="seg-item" data-view="cards" onclick="setViewMode('cards')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/></svg>
-          آية في كل سطر
-        </button>
-        <button class="seg-item" data-view="mushaf" onclick="setViewMode('mushaf')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          مصحف متصل
-        </button>
+        <button class="seg-item" data-view="cards" onclick="setViewMode('cards')">آية في كل سطر</button>
+        <button class="seg-item" data-view="mushaf-right" onclick="setViewMode('mushaf-right')">مصحف متصل يمين</button>
+        <button class="seg-item" data-view="mushaf-center" onclick="setViewMode('mushaf-center')">مصحف متمركز</button>
       </div>
     </div>
 
     <div class="group-block">
-      <div class="group-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-        ألوان الخلفية المريحة للعين
-      </div>
+      <div class="group-title">ألوان الخلفية المريحة للعين</div>
       <div class="themes-row" id="themesRow">
         <button class="theme-swatch" data-theme-opt="qirtas" style="background:#fffdf9; color:#1c2521;" onclick="applyTheme('qirtas')">
-          <span class="swatch-circle" style="background:#f5f0e6; color:#0d6849;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          </span>
+          <span class="swatch-circle" style="background:#f5f0e6; color:#0d6849;">📜</span>
           <span>قرطاس</span>
         </button>
         <button class="theme-swatch" data-theme-opt="fajr" style="background:#ffffff; color:#0f172a;" onclick="applyTheme('fajr')">
-          <span class="swatch-circle" style="background:#e2e8f0; color:#0284c7;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
-          </span>
+          <span class="swatch-circle" style="background:#e2e8f0; color:#0284c7;">☀️</span>
           <span>فجر</span>
         </button>
         <button class="theme-swatch" data-theme-opt="sakina" style="background:#f7fcf9; color:#12291b;" onclick="applyTheme('sakina')">
-          <span class="swatch-circle" style="background:#d5e8dc; color:#15803d;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-          </span>
+          <span class="swatch-circle" style="background:#d5e8dc; color:#15803d;">🌿</span>
           <span>سكينة</span>
         </button>
         <button class="theme-swatch" data-theme-opt="midad" style="background:#151d1b; color:#eef5f3;" onclick="applyTheme('midad')">
-          <span class="swatch-circle" style="background:#0b100f; color:#34d399;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          </span>
+          <span class="swatch-circle" style="background:#0b100f; color:#34d399;">🌙</span>
           <span>مداد ليلي</span>
         </button>
       </div>
     </div>
 
     <div class="group-block">
-      <div class="group-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
-        نوع الخط الواضح للأطفال
-      </div>
+      <div class="group-title">نوع الخط الواضح للأطفال</div>
       <div class="cards-grid" id="fontsGrid">
         <button class="option-card" data-font="Tajawal" onclick="applyFont('Tajawal')">
           <div class="card-icon">أب</div>
           <div class="card-text">
-            <span class="card-title" style="font-family:'Tajawal'; font-size:16px;">خط تجول للأطفال</span>
+            <span class="card-title" style="font-family:'Tajawal'; font-size:15px;">خط تجول للأطفال</span>
             <span class="card-sub">حروف مبسطة بدون زخرفة</span>
           </div>
         </button>
@@ -1266,7 +1347,7 @@
         <button class="option-card" data-font="Scheherazade New" onclick="applyFont('Scheherazade New')">
           <div class="card-icon">آأ</div>
           <div class="card-text">
-            <span class="card-title" style="font-family:'Scheherazade New'; font-size:18px;">خط شهرزاد</span>
+            <span class="card-title" style="font-family:'Scheherazade New'; font-size:17px;">خط شهرزاد</span>
             <span class="card-sub">خط مدرسي مفروق الحروف</span>
           </div>
         </button>
@@ -1290,26 +1371,20 @@
     </div>
 
     <div class="group-block" style="margin-bottom: 4px;">
-      <div class="group-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-        حجم الخط: <span id="fontSizeLabel">30</span>
-      </div>
+      <div class="group-title">حجم الخط: <span id="fontSizeLabel">30</span></div>
       <div class="font-scale-row">
         <span style="font-size:13px; font-weight:700;">A-</span>
-        <input type="range" id="fontSlider" min="22" max="54" step="2" value="30" oninput="applyFontSize(this.value)">
+        <input type="range" id="fontSlider" min="22" max="52" step="2" value="30" oninput="applyFontSize(this.value)">
         <span style="font-size:19px; font-weight:700;">A+</span>
       </div>
     </div>
   </section>
 
-  <!-- نافذة تأكيد الخروج عند ضغط زر الرجوع -->
+  <!-- نافذة تأكيد الخروج -->
   <div id="exitModal" class="exit-modal">
     <div class="exit-box">
-      <div class="exit-icon">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-      </div>
       <h3>هل تود الخروج من التطبيق؟</h3>
-      <p>سيتم حفظ جميع إعداداتك وآخر آية وصلت إليها تلقائياً</p>
+      <p>سيتم حفظ جميع إعداداتك وتقدم حفظك تلقائياً</p>
       <div class="exit-actions">
         <button class="exit-btn btn-stay" onclick="closeExitModal()">البقاء في السورة</button>
         <button class="exit-btn btn-leave" onclick="confirmExitApp()">خروج</button>
@@ -1368,7 +1443,57 @@
       "كَأَنَّهُمْ يَوْمَ يَرَوْنَهَا لَمْ يَلْبَثُوا إِلَّا عَشِيَّةً أَوْ ضُحَاهَا"
     ];
 
-    const STORAGE_KEY = 'surah_naziat_state_v3';
+    // التفسير المبسط ومعاني الكلمات للأطفال لكل آية
+    const MEANINGS = [
+      "يقسم الله بالملائكة التي تنزع أرواح الكافرين بشدة.",
+      "والملائكة التي تقبض أرواح المؤمنين برفق ولطف.",
+      "والملائكة التي تسبح في الفضاء مسرعة بأمر الله.",
+      "فتسبق غيرها لتنفيذ أوامر الله عز وجل.",
+      "فالملائكة التي تدبر شؤون الكون بأمر ربها.",
+      "يوم تضطرب الأرض وتهتز بالنفخة الأولى في الصور.",
+      "تتبعها النفخة الثانية التي يقوم فيها الناس للحساب.",
+      "قلوب الكافرين في ذلك اليوم خائفة مضطربة.",
+      "أبصارهم ذليلة منكسرة من هول ما ترى.",
+      "يقولون في الدنيا مستغربين: هل سنرجع أحياء بعد موتنا؟ (الحافرة: الحياة الأولى).",
+      "هل نعود أحياء بعدما صرنا عظاماً بالية مفتتة؟",
+      "قالوا: رجوعنا إذاً سيكون خاسراً كاذباً.",
+      "فما هي إلا صيحة واحدة فقط ينفخ فيها الملك.",
+      "فإذا هم أحياء جميعاً على وجه الأرض (الساهرة).",
+      "هل جاءك يا محمد خبر نبي الله موسى عليه السلام؟",
+      "حين ناداه ربه في الوادي المطهر المبارك المسمى (طوى).",
+      "أمره الله: اذهب إلى فرعون الظالم فإنه جاوز الحد في الكفر.",
+      "فقل له بلطف: هل لك رغبة في أن تطهر نفسك بالإيمان؟",
+      "وأرشدك إلى طاعة ربك فتخافه وتتقيه.",
+      "فأراه موسى المعجزة العظيمة (العصا واليد البيضاء).",
+      "فكذّب فرعون نبي الله موسى وعصى أمر الله.",
+      "ثم انصرف معرضاً عن الحق يسعى في الأرض بالفساد.",
+      "فجمع جنوده وسحرته ونادى فيهم متكبراً.",
+      "فقال لهم فرعون: أنا ربكم الأعلى!",
+      "فعاقبه الله عقاباً شديداً في الآخرة وفي الدنيا بالغرق.",
+      "إن في قصة فرعون لَدرساً وموعظة لمن يخاف الله.",
+      "أأنتم أيها الناس أصعب خلقاً أم السماء العظيمة التي بناها الله؟",
+      "رفع سقفها عالياً بلا أعمدة وسوّاها بإتقان.",
+      "وجعل ليلها مظلماً هادئاً، وأظهر شمس نهارها المضيئة.",
+      "والأرض بعد خلق السماء بسطها ومهّدها للعيش (دحاها).",
+      "أخرج الله من الأرض عيون الماء العذب والنبات والزرع.",
+      "وثبّت الجبال في الأرض كالأوتاد حتى لا تضطرب.",
+      "كل ذلك منفعة وفائدة لكم ولمواشيكم.",
+      "فإذا جاءت القيامة الكبرى التي تغلب كل داهية (الطامة).",
+      "يوم يتذكر الإنسان كل عمل عمله من خير أو شر.",
+      "وأُظهرت نار جهنم واضحة لكل من يبصر.",
+      "فأما من تكبّر وعصى الله ورسله.",
+      "وفضّل متاع الدنيا الزائل على طاعة الله والآخرة.",
+      "فإن النار هي مسكنه ومستقره.",
+      "وأما من خاف الوقوف بين يدي ربه، ومنع نفسه عن المعاصي.",
+      "فإن الجنة المباركة هي مسكنه ومستقره.",
+      "يسألك الكافرون عن يوم القيامة: متى موعد وقوعها؟",
+      "ليس علم وقتها إليك يا محمد حتى تذكرها لهم.",
+      "إلى الله وحده منتهى علم الساعة ووقتها.",
+      "إنما مهمتك تحذير وتنبيه من يخاف يوم القيامة.",
+      "كأنهم يوم يرون الساعة لم يعيشوا في الدنيا إلا ساعة من آخر النهار (عشية) أو أوله (ضحاها)."
+    ];
+
+    const STORAGE_KEY = 'surah_naziat_state_v4';
     const pad3 = (n) => String(n).padStart(3, '0');
 
     let state = {
@@ -1386,12 +1511,18 @@
       theme: 'qirtas',
       font: 'Tajawal',
       fontSize: 30,
-      viewMode: 'cards'
+      viewMode: 'cards',
+      pauseDelay: 0,
+      playbackSpeed: 1,
+      hideWords: false,
+      showMeaning: false,
+      memorized: []
     };
 
     const audio = new Audio();
     const preloadAudio = new Audio();
     let playRequestId = 0;
+    let delayTimer = null;
 
     function initApp() {
       const list = document.getElementById('quranList');
@@ -1400,8 +1531,7 @@
         const card = document.createElement('div');
         card.className = 'ayah-card';
         card.id = 'ayah-' + num;
-        card.style.animationDelay = `${Math.min(i * 0.015, 0.4)}s`;
-        card.innerHTML = `${text}<span class="ayah-marker">${num}</span><span class="sound-wave"><span></span><span></span><span></span></span><div class="ayah-progress" id="prog-${num}"></div>`;
+        card.innerHTML = `<span class="ayah-text">${text}</span><span class="ayah-marker">${num}</span><div class="ayah-progress" id="prog-${num}"></div>`;
         card.onclick = () => onAyahTap(num);
         list.appendChild(card);
       });
@@ -1410,9 +1540,15 @@
       syncAllUI();
       initDragToClose();
       initBackTrap();
+      requestWakeLock();
     }
 
-    /* حفظ واسترجاع جميع الإعدادات (مع دعم التخزين الأصلي للأندرويد + localStorage) */
+    function requestWakeLock() {
+      if ('wakeLock' in navigator) {
+        navigator.wakeLock.request('screen').catch(() => {});
+      }
+    }
+
     function saveState() {
       const dataToSave = JSON.stringify({
         from: state.from,
@@ -1426,7 +1562,12 @@
         theme: state.theme,
         font: state.font,
         fontSize: state.fontSize,
-        viewMode: state.viewMode
+        viewMode: state.viewMode,
+        pauseDelay: state.pauseDelay,
+        playbackSpeed: state.playbackSpeed,
+        hideWords: state.hideWords,
+        showMeaning: state.showMeaning,
+        memorized: state.memorized
       });
       try {
         localStorage.setItem(STORAGE_KEY, dataToSave);
@@ -1450,6 +1591,7 @@
         try {
           const parsed = JSON.parse(raw);
           Object.assign(state, parsed);
+          if (!Array.isArray(state.memorized)) state.memorized = [];
           state.isPlaying = false;
           state.ayahCount = 0;
           state.rangeCount = 0;
@@ -1458,14 +1600,12 @@
     }
 
     function syncAllUI() {
-      // تطبيق المظهر
       if (state.theme === 'qirtas') document.documentElement.removeAttribute('data-theme');
       else document.documentElement.setAttribute('data-theme', state.theme);
       document.querySelectorAll('#themesRow .theme-swatch').forEach(b => {
         b.classList.toggle('active', b.getAttribute('data-theme-opt') === state.theme);
       });
 
-      // تطبيق الخط والحجم
       document.documentElement.style.setProperty('--quran-font', `'${state.font}', sans-serif`);
       document.querySelectorAll('#fontsGrid .option-card').forEach(b => {
         b.classList.toggle('active', b.getAttribute('data-font') === state.font);
@@ -1475,19 +1615,32 @@
       document.getElementById('fontSlider').value = state.fontSize;
       document.getElementById('fontSizeLabel').textContent = state.fontSize;
 
-      // طريقة العرض
-      document.getElementById('quranList').classList.toggle('mushaf-mode', state.viewMode === 'mushaf');
+      const qList = document.getElementById('quranList');
+      qList.classList.toggle('mushaf-mode', state.viewMode.startsWith('mushaf'));
+      qList.classList.toggle('center-mushaf', state.viewMode === 'mushaf-center');
+      qList.classList.toggle('hide-words', state.hideWords);
+
+      document.getElementById('hideWordsBtn').classList.toggle('active', state.hideWords);
+      document.getElementById('meaningToggleBtn').classList.toggle('active', state.showMeaning);
+      document.getElementById('meaningBanner').classList.toggle('show', state.showMeaning);
+
       document.querySelectorAll('#viewModeSeg .seg-item').forEach(b => {
         b.classList.toggle('active', b.getAttribute('data-view') === state.viewMode);
       });
 
-      // القارئ
+      document.querySelectorAll('#pauseDelaySeg .seg-item').forEach(b => {
+        b.classList.toggle('active', parseInt(b.getAttribute('data-delay')) === state.pauseDelay);
+      });
+
+      document.querySelectorAll('#speedSeg .seg-item').forEach(b => {
+        b.classList.toggle('active', parseFloat(b.getAttribute('data-speed')) === state.playbackSpeed);
+      });
+
       document.getElementById('playerReciter').textContent = state.reciterLabel;
       document.querySelectorAll('#recitersGrid .option-card').forEach(b => {
         b.classList.toggle('active', b.getAttribute('data-reciter') === state.reciterPath);
       });
 
-      // التكرار والنطاق
       document.querySelectorAll('#ayahRepeatRow .num-pill').forEach(b => {
         b.classList.toggle('active', parseInt(b.getAttribute('data-arep')) === state.ayahRepeat);
       });
@@ -1495,12 +1648,62 @@
         b.classList.toggle('active', parseInt(b.getAttribute('data-rrep')) === state.rangeRepeat);
       });
 
+      updateMemorizedUI();
       refreshHifzUI();
-      highlightActiveAyah(state.currentAyah, false);
+      highlightActiveAyah(state.currentAyah, state.isPlaying, false);
     }
 
-    /* نظام الصوت الذكي بدون تقطيع مع التحميل المسبق */
+    function updateMemorizedUI() {
+      const count = state.memorized.length;
+      const pct = Math.round((count / 46) * 100);
+      document.getElementById('memorizedCountText').textContent = `تقدم الحفظ: ${count} من 46 آية`;
+      document.getElementById('memorizedPctText').textContent = `${pct}%`;
+      document.getElementById('memorizedBar').style.width = `${pct}%`;
+
+      for (let i = 1; i <= 46; i++) {
+        const el = document.getElementById('ayah-' + i);
+        if (el) el.classList.toggle('memorized', state.memorized.includes(i));
+      }
+      document.getElementById('markMemBtn').classList.toggle('active', state.memorized.includes(state.currentAyah));
+    }
+
+    function toggleCurrentAyahMemorized() {
+      const idx = state.memorized.indexOf(state.currentAyah);
+      if (idx === -1) state.memorized.push(state.currentAyah);
+      else state.memorized.splice(idx, 1);
+      saveState();
+      updateMemorizedUI();
+    }
+
+    function toggleHideWords() {
+      state.hideWords = !state.hideWords;
+      saveState();
+      syncAllUI();
+    }
+
+    function toggleMeaningBanner() {
+      state.showMeaning = !state.showMeaning;
+      saveState();
+      syncAllUI();
+    }
+
+    function updateMeaningBox(num) {
+      document.getElementById('meaningTitle').textContent = `شرح الآية ${num} للأطفال`;
+      document.getElementById('meaningText').textContent = MEANINGS[num - 1] || '';
+    }
+
+    function clearDelayTimer() {
+      if (delayTimer) {
+        clearTimeout(delayTimer);
+        delayTimer = null;
+      }
+    }
+
     function onAyahTap(num) {
+      clearDelayTimer();
+      const card = document.getElementById('ayah-' + num);
+      if (state.hideWords && card) card.classList.toggle('revealed');
+
       if (num < state.from || num > state.to) {
         state.from = num;
         if (state.to < num) state.to = 46;
@@ -1513,13 +1716,15 @@
     }
 
     function playAyah() {
+      clearDelayTimer();
       const currentReq = ++playRequestId;
       state.isPlaying = true;
-      highlightActiveAyah(state.currentAyah, true);
+      highlightActiveAyah(state.currentAyah, true, true);
 
       const maxRep = state.ayahRepeat === 999 ? '∞' : state.ayahRepeat;
       document.getElementById('playerStatus').textContent = `الآية ${state.currentAyah} من سورة النازعات`;
       document.getElementById('playerCounter').textContent = `التكرار ${state.ayahCount + 1}/${maxRep}`;
+      document.getElementById('dockWave').classList.add('active');
 
       const file = `079${pad3(state.currentAyah)}.mp3`;
       const remoteUrl = `https://everyayah.com/data/${state.reciterPath}/${file}`;
@@ -1527,7 +1732,10 @@
       setPlayButtonLoading(true);
 
       audio.oncanplay = () => {
-        if (currentReq === playRequestId) setPlayButtonLoading(false);
+        if (currentReq === playRequestId) {
+          audio.playbackRate = state.playbackSpeed;
+          setPlayButtonLoading(false);
+        }
       };
 
       if (state.isLocalOffline) {
@@ -1551,6 +1759,7 @@
     }
 
     function safePlay(reqId) {
+      audio.playbackRate = state.playbackSpeed;
       const playPromise = audio.play();
       if (playPromise !== undefined) {
         playPromise.then(() => {
@@ -1559,7 +1768,6 @@
             updatePlayButton();
           }
         }).catch(err => {
-          // تجاهل خطأ الإلغاء العادي عند التنقل السريع بين الآيات
           if (err && err.name === 'AbortError') return;
           if (reqId === playRequestId) onAudioFail();
         });
@@ -1578,7 +1786,8 @@
       state.isPlaying = false;
       setPlayButtonLoading(false);
       updatePlayButton();
-      highlightActiveAyah(state.currentAyah, false);
+      document.getElementById('dockWave').classList.remove('active');
+      highlightActiveAyah(state.currentAyah, false, false);
       document.getElementById('playerStatus').textContent = 'تأكد من الاتصال بالإنترنت لتشغيل هذا القارئ';
     }
 
@@ -1594,6 +1803,21 @@
       if (bar) bar.style.width = '0%';
       if (!state.isPlaying) return;
 
+      const waitTime = state.pauseDelay === -1
+        ? Math.min(Math.max((audio.duration || 2.5) * 1000, 1800), 8000)
+        : state.pauseDelay;
+
+      if (waitTime > 0) {
+        document.getElementById('playerStatus').textContent = `ردد الآن الآية ${state.currentAyah}...`;
+        document.getElementById('dockWave').classList.remove('active');
+        delayTimer = setTimeout(advancePlaybackQueue, waitTime);
+      } else {
+        advancePlaybackQueue();
+      }
+    };
+
+    function advancePlaybackQueue() {
+      if (!state.isPlaying) return;
       state.ayahCount++;
       if (state.ayahCount < state.ayahRepeat) {
         playAyah();
@@ -1614,20 +1838,23 @@
           }
         }
       }
-    };
+    }
 
     function togglePlay() {
+      clearDelayTimer();
       if (state.isPlaying) {
         audio.pause();
         state.isPlaying = false;
         updatePlayButton();
-        highlightActiveAyah(state.currentAyah, false);
+        document.getElementById('dockWave').classList.remove('active');
+        highlightActiveAyah(state.currentAyah, false, false);
         document.getElementById('playerStatus').textContent = `متوقف عند الآية ${state.currentAyah}`;
       } else {
         if (audio.src && audio.currentTime > 0 && !audio.ended) {
           state.isPlaying = true;
           updatePlayButton();
-          highlightActiveAyah(state.currentAyah, true);
+          document.getElementById('dockWave').classList.add('active');
+          highlightActiveAyah(state.currentAyah, true, false);
           audio.play().catch(() => playAyah());
         } else {
           playAyah();
@@ -1636,6 +1863,7 @@
     }
 
     function stopAudio() {
+      clearDelayTimer();
       playRequestId++;
       audio.pause();
       audio.currentTime = 0;
@@ -1644,12 +1872,14 @@
       state.rangeCount = 0;
       setPlayButtonLoading(false);
       updatePlayButton();
-      highlightActiveAyah(state.currentAyah, false);
+      document.getElementById('dockWave').classList.remove('active');
+      highlightActiveAyah(state.currentAyah, false, false);
       document.querySelectorAll('.ayah-progress').forEach(p => p.style.width = '0%');
       document.getElementById('playerStatus').textContent = 'توقفت التلاوة';
     }
 
     function nextAyah() {
+      clearDelayTimer();
       state.currentAyah = state.currentAyah < state.to ? state.currentAyah + 1 : state.from;
       state.ayahCount = 0;
       saveState();
@@ -1657,13 +1887,14 @@
     }
 
     function prevAyah() {
+      clearDelayTimer();
       state.currentAyah = state.currentAyah > state.from ? state.currentAyah - 1 : state.from;
       state.ayahCount = 0;
       saveState();
       playAyah();
     }
 
-    function highlightActiveAyah(num, playing) {
+    function highlightActiveAyah(num, playing, doScroll) {
       document.querySelectorAll('.ayah-card').forEach(c => {
         c.classList.remove('active', 'playing');
       });
@@ -1671,8 +1902,10 @@
       if (el) {
         el.classList.add('active');
         if (playing) el.classList.add('playing');
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (doScroll) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
+      updateMeaningBox(num);
+      document.getElementById('markMemBtn').classList.toggle('active', state.memorized.includes(num));
     }
 
     function setPlayButtonLoading(loading) {
@@ -1693,7 +1926,19 @@
         : '<path d="M8 5v14l11-7z"/>';
     }
 
-    /* التحكم في إعدادات الحفظ */
+    function setPauseDelay(val) {
+      state.pauseDelay = val;
+      saveState();
+      syncAllUI();
+    }
+
+    function setPlaybackSpeed(val) {
+      state.playbackSpeed = val;
+      audio.playbackRate = val;
+      saveState();
+      syncAllUI();
+    }
+
     function stepRange(type, delta) {
       if (type === 'from') {
         state.from = Math.min(Math.max(state.from + delta, 1), 46);
@@ -1757,7 +2002,6 @@
       if (state.isPlaying) playAyah();
     }
 
-    /* التحكم في المظهر والخط */
     function setViewMode(mode) {
       state.viewMode = mode;
       saveState();
@@ -1782,7 +2026,6 @@
       syncAllUI();
     }
 
-    /* فتح وإغلاق النوافذ السفلية مع قفل التمرير الخلفي + السحب بالإصبع */
     function openSheet(id) {
       closeAllSheets();
       document.body.classList.add('lock-scroll');
@@ -1845,7 +2088,6 @@
       });
     }
 
-    /* التحكم في زر الرجوع الخاص بالهاتف وتأكيد الخروج */
     function isAnySheetOpen() {
       return Array.from(document.querySelectorAll('.sheet')).some(s => s.classList.contains('show'));
     }
